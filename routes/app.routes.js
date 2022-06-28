@@ -3,10 +3,16 @@ const pushNotificationController = require("../controllers/push-notification.con
 const express = require("express");
 const router = express.Router();
 
-router.get("/sendNotification", pushNotificationController.sendNotificationApi);
+router.get(
+  "/testSendNotification",
+  pushNotificationController.testSendNotification
+);
+router.post("/sendToDevice", pushNotificationController.sendToDevice);
+router.post("/sendCustomMessage", pushNotificationController.sendCustomMessage);
+router.post("/sendAttachmentUrl", pushNotificationController.sendAttachmentUrl);
 router.post(
-  "/sendNotificationToDevice",
-  pushNotificationController.sendNotificationToDevice
+  "/sendAttachmentUrlImage",
+  pushNotificationController.sendAttachmentUrlImage
 );
 
 module.exports = router;
